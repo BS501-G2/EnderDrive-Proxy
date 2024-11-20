@@ -7,7 +7,13 @@ export default defineConfig({
 		proxy: {
 			'/': {
 				target: 'https://immune-squid-usefully.ngrok-free.app/',
-				changeOrigin: false,
+				changeOrigin: true,
+				secure: true,
+				ws: false
+			},
+			'/socket.io': {
+				target: 'https://immune-squid-usefully.ngrok-free.app/socket.io',
+				changeOrigin: true,
 				secure: true,
 				ws: true
 			}
